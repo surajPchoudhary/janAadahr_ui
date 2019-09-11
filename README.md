@@ -1,2 +1,1 @@
-# janAadahr_ui
-Jan Adhar frontend
+# jan_aadhar_ui
