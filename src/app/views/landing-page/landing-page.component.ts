@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal, ) { }
 
-  ngOnInit() {
+
+  ngOnInit() {}
+  
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.name = 'World';
   }
-
 }
+
+
+
+
+
+@Component({
+  selector: 'ngbd-modal-content',
+  templateUrl:'./ngbd-model.html',
+  
+  
+})
+export class NgbdModalContent {
+ // @Input() name;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
+
+
