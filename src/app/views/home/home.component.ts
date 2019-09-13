@@ -9,12 +9,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  registerForm: FormGroup;
+  familyForm: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.familyForm = this.formBuilder.group({
       bhamashaId: ['', Validators.required],
       familyId: ['', Validators.required],
       aadharId: ['', Validators.required],
@@ -24,14 +24,13 @@ export class HomeComponent implements OnInit {
   });
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
+  get f() { return this.familyForm.controls; }
 
   onSubmit() {
       this.submitted = true;
 
       // stop here if form is invalid
-      if (this.registerForm.invalid) {
+      if (this.familyForm.invalid) {
           return;
       }
 
