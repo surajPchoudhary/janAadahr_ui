@@ -5,17 +5,18 @@ import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
 import { ViewtransactionComponent } from './views/viewtransaction/viewtransaction.component';
+import { FamilyInfoComponent } from './views/family-info/family-info.component';
+import { HomeComponent } from './views/home/home.component';
+
 
 const routes: Routes = [
-
   {path:'', component:LandingPageComponent},
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'citizen-history', component:CitizenhistoryComponent},
   {path:'transaction-id', component:TransactionIdComponent},
   {path:'view-transaction', component:ViewtransactionComponent},
- 
-
-
+  {path:'familyInfo', component:FamilyInfoComponent},
+  {path:'home', component:HomeComponent},
 ];
 
 @NgModule({
