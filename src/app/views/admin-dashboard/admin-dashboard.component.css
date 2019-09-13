@@ -1,0 +1,63 @@
+.tile-stats {
+    position: relative;
+    display: block;
+    margin-bottom: 12px;
+    border: 1px solid #E4E4E4;
+    /* -webkit-border-radius: 5px; */
+    overflow: hidden;
+    padding-bottom: 5px;
+    /* -webkit-background-clip: padding-box;
+    -moz-border-radius: 5px;
+    -moz-background-clip: padding; */
+    border-radius: 5px;
+    background: #FFF;
+    transition: all .3s ease-in-out;
+}
+
+.tile-stats .count, .tile-stats h4, .tile-stats p {
+    position: relative;
+    margin: 0 0 0 10px;
+    z-index: 5;
+    padding: 0;
+}
+.tile-stats .count {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.65857;
+}
+.green {
+    color: #1ABB9C;
+}
+
+.tile-stats .icon {
+    width: 20px;
+    height: 20px;
+    color: #BAB8B8;
+    position: absolute;
+    right: 53px;
+    top: 22px;
+    z-index: 1;
+}
+.tile-stats .icon i {
+    margin: 0;
+    font-size: 60px;
+    line-height: 0;
+    vertical-align: bottom;
+    padding: 0;
+}
+
+.fa {
+    display: inline-block;
+
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:host >>> .alert-custom {
+    color: white;
+    background-color: #184069;
+    border-color: #000280;
+   
+  }
