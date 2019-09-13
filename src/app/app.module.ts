@@ -9,6 +9,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
 import { ViewtransactionComponent } from './views/viewtransaction/viewtransaction.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ViewtransactionComponent } from './views/viewtransaction/viewtransactio
     CitizenhistoryComponent,
     TransactionIdComponent,
     ViewtransactionComponent,
+    HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
