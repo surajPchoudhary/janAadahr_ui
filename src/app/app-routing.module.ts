@@ -4,7 +4,8 @@ import { LandingPageComponent } from './views/landing-page/landing-page.componen
 import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard.component';
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
-import { ViewtransactionComponent } from './views/viewtransaction/viewtransaction.component';
+import { BlockComponent } from './views/block/block.component';
+
 
 const routes: Routes = [
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'citizen-history', component:CitizenhistoryComponent},
   {path:'transaction-id', component:TransactionIdComponent},
-  {path:'view-transaction', component:ViewtransactionComponent},
+  {path:'blocks', component:BlockComponent},
+ 
  
 
 

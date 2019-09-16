@@ -8,9 +8,11 @@ import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
-import { ViewtransactionComponent } from './views/viewtransaction/viewtransaction.component';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { BlockComponent } from './views/block/block.component';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { FooterComponent } from './footer/footer.component';
     AdminDashboardComponent,
     CitizenhistoryComponent,
     TransactionIdComponent,
-    ViewtransactionComponent,
+    
     HeaderComponent,
     FooterComponent,
+    BlockComponent,
     
   ],
   imports: [
