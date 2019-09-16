@@ -7,21 +7,32 @@ import { LandingPageComponent, NgbdModalContent } from './views/landing-page/lan
 import { NgbActiveModal, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestComponent } from './views/test/test.component';
 
+import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard.component';
+
+import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
+import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
+import { ViewtransactionComponent } from './views/viewtransaction/viewtransaction.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     NgbdModalContent,
-    TestComponent
+    TestComponent,
+    AdminDashboardComponent,
+    CitizenhistoryComponent,
+    TransactionIdComponent,
+    ViewtransactionComponent,
+    HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //NgbActiveModal,
-  // NgbModal,
-   NgbModule,
-
+    NgbModule
   ],
   entryComponents:[NgbdModalContent],
   providers: [],

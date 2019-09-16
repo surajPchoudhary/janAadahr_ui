@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,15 +10,23 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap'
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, ) { }
+  constructor(private modalService: NgbModal,public router:Router ) { }
 
 
   ngOnInit() {}
   
-  open() {
-    const modalRef = this.modalService.open(NgbdModalContent);
-    modalRef.componentInstance.name = 'World';
-  }
+  // open() {
+  //   const modalRef = this.modalService.open(NgbdModalContent);
+  //   modalRef.componentInstance.name = 'World';
+  // }
+
+  open(){
+    
+      this.router.navigate(['/citizen-history'],
+        // { queryParams: { "_id": this._id, userName: this.userName } })
+    
+
+      )}
 }
 
 
