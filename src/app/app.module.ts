@@ -3,9 +3,12 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './views/landing-page/landing-page.component';
+import { LandingPageComponent, NgbdModalContent } from './views/landing-page/landing-page.component';
+import { NgbActiveModal, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TestComponent } from './views/test/test.component';
+
 import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
 import { HttpClientModule } from '@angular/common/http'
@@ -16,12 +19,15 @@ import { BlockComponent } from './views/block/block.component';
 import { AdminSideNavComponent } from './admin-side-nav/admin-side-nav.component';
 import { FamilyInfoComponent } from './views/family-info/family-info.component';
 import { HomeComponent } from './views/home/home.component';
+import { FamilyDetailsComponent } from './views/family-details/family-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    NgbdModalContent,
+    TestComponent,
     AdminDashboardComponent,
     CitizenhistoryComponent,
     TransactionIdComponent,
@@ -32,7 +38,7 @@ import { HomeComponent } from './views/home/home.component';
     AdminSideNavComponent,
     FamilyInfoComponent,
     HomeComponent,
-  
+    FamilyDetailsComponent
     
   ],
   imports: [
@@ -41,6 +47,7 @@ import { HomeComponent } from './views/home/home.component';
     NgbModule,
     ReactiveFormsModule,HttpClientModule
   ],
+  entryComponents:[NgbdModalContent],
   providers: [],
   bootstrap: [AppComponent]
 })

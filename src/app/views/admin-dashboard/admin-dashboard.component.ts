@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as CanvasJS from '../../../assets/js/canvasjs.min';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+
 import { AdminService } from 'src/app/admin.service';
  
 
@@ -22,7 +22,6 @@ export class AdminDashboardComponent implements OnInit {
     this.registeredCitizen()
     
   }
-
   
   districts() {
     var chart = new CanvasJS.Chart("districtData", {
@@ -108,11 +107,9 @@ export class AdminDashboardComponent implements OnInit {
           { y: 51.08, name: "Male", color: 'green' },
           { y: 27.34, name: "Female", color: 'pink' },
           { y: 10.34, name: "Others", color: 'blue' },
-
         ]
       }]
     });
-
     chart.render();
   }
 
