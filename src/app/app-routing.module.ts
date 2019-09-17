@@ -10,12 +10,14 @@ import { HomeComponent } from './views/home/home.component';
 import { BlockComponent } from './views/block/block.component';
 
 
+
 const routes: Routes = [
   {path:'', component:LandingPageComponent},
   {path:'admin_dashboard', component:AdminDashboardComponent},
   {path:'citizen-history', component:CitizenhistoryComponent},
   {path:'transaction-id', component:TransactionIdComponent},
   {path:'blocks', component:BlockComponent},
+  
  
   {path:'familyInfo', component:FamilyInfoComponent},
   {path:'home', component:HomeComponent},

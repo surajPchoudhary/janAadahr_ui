@@ -17,3 +17,7 @@ function myFunction() {
     }
   }
 
+  function showModal() {
+    $('#myModal').modal('show');
+  }
+

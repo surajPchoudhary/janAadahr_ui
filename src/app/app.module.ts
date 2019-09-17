@@ -8,7 +8,7 @@ import { AdminDashboardComponent } from './views/admin-dashboard/admin-dashboard
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CitizenhistoryComponent } from './views/citizenhistory/citizenhistory.component';
 import { TransactionIdComponent } from './views/transaction-id/transaction-id.component';
-
+import { HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlockComponent } from './views/block/block.component';
@@ -16,6 +16,7 @@ import { BlockComponent } from './views/block/block.component';
 import { AdminSideNavComponent } from './admin-side-nav/admin-side-nav.component';
 import { FamilyInfoComponent } from './views/family-info/family-info.component';
 import { HomeComponent } from './views/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import { HomeComponent } from './views/home/home.component';
     BlockComponent,
     AdminSideNavComponent,
     FamilyInfoComponent,
-    HomeComponent
+    HomeComponent,
+  
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
