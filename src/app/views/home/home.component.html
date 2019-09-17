@@ -1,0 +1,127 @@
+<div class="row">
+
+    
+
+    <div class="col-md-2 bk_border bk_color pr_0">
+        <app-header></app-header>
+    </div>
+    <div class="col-md-10 pl_0 pr_0">
+<div class="container-fluid">
+        <div class="container-fluid">
+<!-- <div class="row"> -->
+
+        <div class="jumbotron" style="margin-left: 2%">
+             
+    <!-- <div class="col-md-2 bk_border bk_color pr_0">
+        <app-header></app-header>
+    </div> -->
+
+    <!-- <div class="col-md-10 pl_0 pr_0"> -->
+
+
+
+        <!-- <div class="row ml_40 mt_40">
+            <div class="col-md-11 side_color">
+                <div class="ft_color_white ft_18 pad_7">HOME</div>
+            </div>
+        </div> -->
+
+        <p>
+                <ngb-alert type="custom" style=" color: white;
+                background-color: #184069;
+                border-color: #000280;" [dismissible]="false"><strong>HOME</strong></ngb-alert>
+              </p>
+        <!-- main app container -->
+        <!-- <div class="jumbotron mt_40"> -->
+            <!-- <div class="container"> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <form [formGroup]="familyForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Bhamasha Id</label>
+                                        <input type="text" formControlName="bhamashaId" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.bhamashaId.errors }" />
+                                        <div *ngIf="submitted && f.bhamashaId.errors" class="invalid-feedback">
+                                            <div *ngIf="f.bhamashaId.errors.required">Bhamasha Id is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Family Id</label>
+                                        <input type="text" formControlName="familyId" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.familyId.errors }" />
+                                        <div *ngIf="submitted && f.familyId.errors" class="invalid-feedback">
+                                            <div *ngIf="f.familyId.errors.required">Family Id is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label>Aadhar Id</label>
+                                        <input type="text" formControlName="aadharId" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.aadharId.errors }" />
+                                        <div *ngIf="submitted && f.aadharId.errors" class="invalid-feedback">
+                                            <div *ngIf="f.aadharId.errors.required">Aadhar Id is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Head Of Family</label>
+                                        <input type="text" formControlName="familyHead" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.familyHead.errors }" />
+                                        <div *ngIf="submitted && f.familyHead.errors" class="invalid-feedback">
+                                            <div *ngIf="f.familyHead.errors.required">Head Of Family is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>District</label>
+                                        <input type="text" formControlName="district" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.district.errors }" />
+                                        <div *ngIf="submitted && f.district.errors" class="invalid-feedback">
+                                            <div *ngIf="f.district.errors.required">District is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Block City</label>
+                                        <input type="text" formControlName="blockCity" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && f.blockCity.errors }" />
+                                        <div *ngIf="submitted && f.blockCity.errors" class="invalid-feedback">
+                                            <div *ngIf="f.blockCity.errors.required">Block City is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <button [disabled]="loading" class="btn btn-primary">Register</button>
+                            </div> -->
+                        </form>
+                    </div>
+                </div>
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+</div>
+<!-- </div> -->
+
+</div>
+        </div>
+        </div>
+</div>
+<div class="col-md-12 pr_0 pl_0">
+    <app-footer></app-footer>
+</div>

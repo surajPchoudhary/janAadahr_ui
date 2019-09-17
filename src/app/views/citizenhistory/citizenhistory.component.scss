@@ -1,9 +1,8 @@
 
-    table, td {
-      border: 1px solid black; 
+    :host >>> .alert-custom {
+      color: white;
+      background-color: #184069;
+      border-color: #000280;
+      padding: 0%
+     
     }
-    ​
-    th {
-        width: 33%;
-    }
-    

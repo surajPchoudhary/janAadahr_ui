@@ -1,83 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import * as CanvasJS from '../../../assets/js/canvasjs.min';
+import { Router } from '@angular/router';
+
+
+ 
+declare var $: any;
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-
-  constructor() { }
-
+  dataPoint:any
+  display:any;
+  constructor(private route:Router) { }
   ngOnInit() {
     this.gender();
     this.districts();
-    this.Blocks();
+    // this.registeredCitizen()
+    
   }
-
-  Blocks() {
-    var chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      title: {
-        text: "Blocks"
-      },
-      axisY: {
-        title: "Number of Families",
-        titleFontColor: "#4F81BC",
-        lineColor: "#4F81BC",
-        labelFontColor: "#4F81BC",
-        tickColor: "#4F81BC"
-      },
-      axisY2: {
-        title: "Number of Members ",
-        titleFontColor: "#a2aba2",
-        lineColor: "#a2aba2",
-        labelFontColor: "#a2aba2",
-        tickColor: "#a2aba2"
-      },
-      toolTip: {
-        shared: true
-      },
-      legend: {
-        cursor: "pointer",
-        // itemclick: toggleDataSeries
-      },
-      data: [{
-        type: "column",
-        name: "Number of Families",
-        legendText: "Number of Families",
-        showInLegend: true,
-        dataPoints: [
-          { label: "Ajmer", y: 1266000.21 },
-          { label: "Jaipur", y: 1302890.25 },
-          { label: "Kota", y: 1157980.20 },
-          { label: "Bikaner", y: 1480000.77 },
-          { label: "Alwar", y: 1010000.50 },
-          { label: "Hanumangarh", y: 970000.8 }
-        ]
-      },
-      {
-        type: "column",
-        name: "Number of Members",
-        legendText: "Number of Members",
-        axisYType: "secondary",
-        showInLegend: true,
-        color: '#a2aba2',
-        dataPoints: [
-          { label: "Ajmer", y: 1367080.21 },
-          { label: "Jaipur", y: 1403900.25 },
-          { label: "Kota", y: 1259980.20 },
-          { label: "Bikaner", y: 1585000.77 },
-          { label: "Alwar", y: 1210100.50 },
-          { label: "Hanumangarh", y: 1074500.8 }
-        ]
-      }]
-    });
-    chart.render();
-  }
+  
   districts() {
     var chart = new CanvasJS.Chart("districtData", {
       animationEnabled: true,
+      
       title: {
         text: "Districts"
       },
@@ -104,10 +51,12 @@ export class AdminDashboardComponent implements OnInit {
       },
       data: [{
         type: "column",
+        click: this.onClick,
         name: "Number of Families",
         legendText: "Number of Families",
         showInLegend: true,
         color: '#40d640',
+        
         dataPoints: [
           { label: "Ajmer", y: 1266000.21 },
           { label: "Jaipur", y: 1302890.25 },
@@ -119,6 +68,7 @@ export class AdminDashboardComponent implements OnInit {
       },
       {
         type: "column",
+        click: this.onClick,
         name: "Number of Members",
         legendText: "Number of Members",
         axisYType: "secondary",
@@ -136,8 +86,8 @@ export class AdminDashboardComponent implements OnInit {
     });
     chart.render();
   }
-
-
+ 
+ 
   gender() {
     let chart = new CanvasJS.Chart("genderData", {
       theme: "light2",
@@ -155,13 +105,22 @@ export class AdminDashboardComponent implements OnInit {
           { y: 51.08, name: "Male", color: 'green' },
           { y: 27.34, name: "Female", color: 'pink' },
           { y: 10.34, name: "Others", color: 'blue' },
-
         ]
       }]
     });
-
     chart.render();
   }
+onClick(e) {
+  if(e.dataPoint.label=='Ajmer'){
+ window.location.href='/blocks'
+ }
 }
-
-
+// registeredCitizen(){
+//   console.log("=================")
+//   this.service.getRegisteredCitizen().subscribe(data=>{
+//     console.log("registerdCitizen",data)
+  
+//   })
+ 
+// }
+}

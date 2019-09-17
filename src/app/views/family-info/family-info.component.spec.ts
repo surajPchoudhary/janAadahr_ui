@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewtransactionComponent } from './viewtransaction.component';
+import { FamilyInfoComponent } from './family-info.component';
 
-describe('ViewtransactionComponent', () => {
-  let component: ViewtransactionComponent;
-  let fixture: ComponentFixture<ViewtransactionComponent>;
+describe('FamilyInfoComponent', () => {
+  let component: FamilyInfoComponent;
+  let fixture: ComponentFixture<FamilyInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ViewtransactionComponent ]
+      declarations: [ FamilyInfoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewtransactionComponent);
+    fixture = TestBed.createComponent(FamilyInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,6 @@
 .bk_color{
     background-color: #869ec4 !important;
+    
 }
 
 .ht_60{
@@ -13,23 +14,30 @@
     margin: 5px;
 }
 
+.bk_height{
+    height:50%
+}
 .bk_border{
-    border: 1px solid #5c5a55
+    border: 2px solid #5c5a55;
+   
 }
 
 .side_ft{
     color: #000000;
     size: 20px;
     text-transform: uppercase;
+    
+}
+
+.height1{
+    height:100% !important;
 }
 
 .br_bottom{
-    border-bottom: 2px solid #1B3280;
+    border-bottom: 3px solid #1B3280;
+  
 }
-.container{
+.container1{
     margin-left: 13%;
     margin-top: -9%;
 }
-
-
- 

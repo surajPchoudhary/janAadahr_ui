@@ -10,15 +10,20 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
 
+  
   constructor(private modalService: NgbModal,public router:Router ) { }
 
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
   
   // open() {
   //   const modalRef = this.modalService.open(NgbdModalContent);
   //   modalRef.componentInstance.name = 'World';
   // }
+
+
 
   open(){
     
