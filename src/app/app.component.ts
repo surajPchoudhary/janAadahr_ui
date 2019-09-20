@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'janadar';
   public str : any ;
   public hide_menu:any;
+  public hide_bar:any;
   constructor(public router:Router ) { }
 
   ngOnInit() {
@@ -20,9 +21,11 @@ export class AppComponent {
 
     this.hide_menu = false;
     console.log("hide_menu :",this.hide_menu);
-
+    this.hide_bar = false;
     }else{
       this.hide_menu = true;
+      this.hide_bar = true;
+      console.log("hide_menu :",this.hide_menu);
     }
   }
 

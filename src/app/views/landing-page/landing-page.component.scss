@@ -1,3 +1,8 @@
 .min-height{
     min-height: 30px;
 }
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle{
+    background-color: none !important;  
+    text-decoration: none !important;
+}
