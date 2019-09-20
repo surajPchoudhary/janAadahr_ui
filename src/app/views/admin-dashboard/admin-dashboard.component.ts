@@ -103,7 +103,7 @@ export class AdminDashboardComponent implements OnInit {
       theme: "light2",
       
       animationEnabled: true,
-      exportEnabled: true,
+      exportEnabled: false,
       title: {
         text: "Gender Data"
       },
