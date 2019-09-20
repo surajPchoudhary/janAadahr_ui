@@ -13,20 +13,27 @@ declare var $: any;
 })
 export class AdminDashboardComponent implements OnInit {
   dataPoint:any
-  display:any;
+   t1:any;
+  transactions:any;
+  citizen:any;
+  gender1:any;
+  c1:any;
+  g1:any;
   constructor(private route:Router,public service:AdminService) { }
 
   ngOnInit() {
-    this.gender();
+    // this.gender(data);
     this.districts();
     this.registeredCitizen()
-    
+    this.totalTransaction()
+    this.genderData()
   }
   
   districts() {
-    var chart = new CanvasJS.Chart("districtData", {
+    var ctx = document.getElementById("districtData");
+    var chart = new CanvasJS.Chart(ctx, {
       animationEnabled: true,
-      
+     
       title: {
         text: "Districts"
       },
@@ -90,9 +97,11 @@ export class AdminDashboardComponent implements OnInit {
   }
  
  
-  gender() {
+  gender(data) {
+    console.log("GenderData",data);
     let chart = new CanvasJS.Chart("genderData", {
       theme: "light2",
+      
       animationEnabled: true,
       exportEnabled: true,
       title: {
@@ -101,12 +110,13 @@ export class AdminDashboardComponent implements OnInit {
       data: [{
         type: "pie",
         showInLegend: true,
-        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        toolTipContent: "<b>{name}</b>: {y}",
         indexLabel: "{name} - #percent%",
         dataPoints: [
-          { y: 51.08, name: "Male", color: 'green' },
-          { y: 27.34, name: "Female", color: 'pink' },
-          { y: 10.34, name: "Others", color: 'blue' },
+          { y: data.male, name: "Male", color: 'green' },
+          { y: data.female, name: "Female", color: 'pink' },
+          { y: data.TotalGenderCount, name: "Total", color: 'blue' },
+       
         ]
       }]
     });
@@ -123,11 +133,35 @@ onClick(e) {
 registeredCitizen(){
   console.log("=================")
   this.service.getRegisteredCitizen().subscribe(data=>{
-    console.log("registerdCitizen",data)
-  
+    
+      this.citizen=data
+      this.c1=this.citizen.Count
+      console.log("registerdCitizen",this.c1)
   })
  
 }
+
+totalTransaction(){
+  
+  this.service.getTotalTransaction().subscribe(data=>{
+   
+      this.transactions=data
+      // this.result=this.transactions.result[0]
+      this.t1=this.transactions.Count
+      console.log("totalTransaction",this.t1)
+  })
+ 
+}
+
+  genderData() {
+
+    this.service.getGender().subscribe(data => {
+      this.gender1 = data
+      console.log("GenderData", this.gender1)
+      this.gender(this.gender1)
+    })
+  }
+
 
 
 
