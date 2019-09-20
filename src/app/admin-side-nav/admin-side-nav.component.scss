@@ -2,6 +2,7 @@
     color: #000000;
     size: 20px;
     text-transform: uppercase;
+ 
 }
 
 .br_bottom{
@@ -10,4 +11,12 @@
 
 .br_width{
     width: 167% !important;
+    
+}
+
+.sidenav{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
