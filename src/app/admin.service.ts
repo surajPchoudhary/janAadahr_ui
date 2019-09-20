@@ -4,12 +4,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-url:string='http://10.68.198.77:3000'
+url:string='http://localhost:3000'
   constructor(public http:HttpClient) { }
 
   getRegisteredCitizen(){
-    return this.http.post(`${this.url}/getBlockCount`,{})
-    
-    }
+    return this.http.get(`${this.url}/registeredCitizen`)
+  }
+
+  getTotalTransaction(){
+    return this.http.post(`${this.url}/getTotalTransCount`,{})
+  }
+
+  getGender(){
+    return this.http.post(`${this.url}/totalGenderCount`,{})
+  }
 
   }

@@ -12,7 +12,9 @@
     border-radius: 5px;
     background: #FFF;
     transition: all .3s ease-in-out;
+    
 }
+
 
 .tile-stats .count, .tile-stats h4, .tile-stats p {
     position: relative;
