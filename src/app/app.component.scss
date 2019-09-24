@@ -45,3 +45,12 @@
 .full-height{
     height: 100vh;
 }
+// .header{
+//     top: 0%;
+//     position: fixed;
+//     width: 100%
+// }
+
+.dropdown-toggle::after {
+    display:none;
+}

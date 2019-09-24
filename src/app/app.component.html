@@ -14,10 +14,21 @@
     }
   </style>
 </div>
-<div class="row bk_color ht_60" *ngIf="hide_bar">
+
+
+
+<div class="row bk_color" *ngIf="hide_bar">
   <div class="col-md-11 col-sm-11 col-xs-11"></div>
   <div class="col-md-1 col-sm-1 col-xs-1">
-    <div class="bk_img"></div>
+      <div ngbDropdown>
+        <div class="bk_img" ngbDropdownToggle>
+       <ul ngbDropdownMenu>
+            <li style="text-align: center">Goverdhan Singh</li>
+            <li><a ngbDropdownItem href="#">Logout</a></li>
+           
+          </ul>  
+          </div>
+    </div>
   </div>
 </div>
 <div class="col-md-12 col-sm-12 col-xs-12 full-height">
@@ -26,3 +37,4 @@
 <div class="col-md-12 pr_0 pl_0">
   <app-footer></app-footer>
 </div>
+

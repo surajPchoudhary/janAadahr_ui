@@ -39,7 +39,7 @@
                                         <div class="form-group">
                                             <label>Bhamasha Id</label>
                                             <input type="text" formControlName="bhamashaId" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.bhamashaId.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.bhamashaId.errors }" disabled />
                                             <div *ngIf="submitted && f.bhamashaId.errors" class="invalid-feedback">
                                                 <div *ngIf="f.bhamashaId.errors.required">Bhamasha Id is required</div>
                                             </div>
@@ -49,7 +49,7 @@
                                         <div class="form-group">
                                             <label>Family Id</label>
                                             <input type="text" formControlName="familyId" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.familyId.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.familyId.errors }" disabled />
                                             <div *ngIf="submitted && f.familyId.errors" class="invalid-feedback">
                                                 <div *ngIf="f.familyId.errors.required">Family Id is required</div>
                                             </div>
@@ -63,7 +63,7 @@
                                         <div class="form-group">
                                             <label>Aadhar Id</label>
                                             <input type="text" formControlName="aadharId" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.aadharId.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.aadharId.errors }" disabled />
                                             <div *ngIf="submitted && f.aadharId.errors" class="invalid-feedback">
                                                 <div *ngIf="f.aadharId.errors.required">Aadhar Id is required</div>
                                             </div>
@@ -73,7 +73,7 @@
                                         <div class="form-group">
                                             <label>Head Of Family</label>
                                             <input type="text" formControlName="familyHead" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.familyHead.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.familyHead.errors }" disabled />
                                             <div *ngIf="submitted && f.familyHead.errors" class="invalid-feedback">
                                                 <div *ngIf="f.familyHead.errors.required">Head Of Family is required
                                                 </div>
@@ -87,7 +87,7 @@
                                         <div class="form-group">
                                             <label>District</label>
                                             <input type="text" formControlName="district" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.district.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.district.errors }" disabled/>
                                             <div *ngIf="submitted && f.district.errors" class="invalid-feedback">
                                                 <div *ngIf="f.district.errors.required">District is required</div>
                                             </div>
@@ -97,7 +97,7 @@
                                         <div class="form-group">
                                             <label>Block City</label>
                                             <input type="text" formControlName="blockCity" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.blockCity.errors }" />
+                                                [ngClass]="{ 'is-invalid': submitted && f.blockCity.errors }" disabled />
                                             <div *ngIf="submitted && f.blockCity.errors" class="invalid-feedback">
                                                 <div *ngIf="f.blockCity.errors.required">Block City is required</div>
                                             </div>
