@@ -67,7 +67,7 @@ export class AdminDashboardComponent implements OnInit {
         color: '#40d640',
         
         dataPoints: [
-          { label: "Ajmer", y: 1266500.21 },
+          { label: "Ajmer", y: 1266000.21 },
           { label: "Jaipur", y: 1302890.25 },
           { label: "Kota", y: 1157980.20 },
           { label: "Bikaner", y: 1480000.77 },
