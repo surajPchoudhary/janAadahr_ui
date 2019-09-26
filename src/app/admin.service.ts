@@ -7,12 +7,14 @@ export class AdminService {
 url:string='http://localhost:3000'
   constructor(public http:HttpClient) { }
 
-  getRegisteredCitizen(){
-    return this.http.get(`${this.url}/registeredCitizen`)
-  }
+ 
 
   getTotalTransaction(){
-    return this.http.post(`${this.url}/getTotalTransCount`,{})
+    return this.http.post(`${this.url}/getTotalCounts`,{})
+  }
+
+  getDistrictCount(){
+    return this.http.post(`${this.url}/getDistrictCount`,{})
   }
 
   getGender(){

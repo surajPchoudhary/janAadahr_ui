@@ -15,21 +15,22 @@ export class AdminDashboardComponent implements OnInit {
   dataPoint:any
    t1:any;
   transactions:any;
-  citizen:any;
+  district:any;
   gender1:any;
-  c1:any;
+  d1:any;
   g1:any;
   constructor(private route:Router,public service:AdminService) { }
 
   ngOnInit() {
     // this.gender(data);
-    this.districts();
-    this.registeredCitizen()
+     
+    this.totalDistrict();
     this.totalTransaction()
-    this.genderData()
+    //  this.genderData()
   }
   
-  districts() {
+  districts(result) {
+    console.log(result)
     var ctx = document.getElementById("districtData");
     var chart = new CanvasJS.Chart(ctx, {
       animationEnabled: true,
@@ -67,12 +68,41 @@ export class AdminDashboardComponent implements OnInit {
         color: '#40d640',
         
         dataPoints: [
-          { label: "Ajmer", y: 1266000.21 },
-          { label: "Jaipur", y: 1302890.25 },
-          { label: "Kota", y: 1157980.20 },
-          { label: "Bikaner", y: 1480000.77 },
-          { label: "Alwar", y: 1010000.50 },
-          { label: "Hanumangarh", y: 970000.8 }
+          { label: result[0].data.DISTRICT, y: result[0].data.TOTAL_FAMILIES },
+          { label:result[1].data.DISTRICT, y: result[1].data.TOTAL_FAMILIES },
+          { label: result[2].data.DISTRICT, y: result[2].data.TOTAL_FAMILIES },
+          { label: result[3].data.DISTRICT, y: result[3].data.TOTAL_FAMILIES },
+          { label: result[4].data.DISTRICT, y: result[4].data.TOTAL_FAMILIES },
+          { label: result[5].data.DISTRICT, y: result[5].data.TOTAL_FAMILIES },
+          { label: result[6].data.DISTRICT, y: result[6].data.TOTAL_FAMILIES },
+          { label:result[7].data.DISTRICT, y: result[7].data.TOTAL_FAMILIES },
+          { label: result[8].data.DISTRICT, y: result[8].data.TOTAL_FAMILIES },
+          { label: result[9].data.DISTRICT, y: result[9].data.TOTAL_FAMILIES },
+          { label: result[10].data.DISTRICT, y: result[10].data.TOTAL_FAMILIES },
+          { label: result[11].data.DISTRICT, y: result[11].data.TOTAL_FAMILIES },
+          { label: result[12].data.DISTRICT, y: result[12].data.TOTAL_FAMILIES },
+          { label:result[13].data.DISTRICT, y: result[13].data.TOTAL_FAMILIES },
+          { label: result[14].data.DISTRICT, y: result[14].data.TOTAL_FAMILIES },
+          { label: result[15].data.DISTRICT, y: result[15].data.TOTAL_FAMILIES },
+          { label: result[16].data.DISTRICT, y: result[16].data.TOTAL_FAMILIES },
+          { label: result[17].data.DISTRICT, y: result[17].data.TOTAL_FAMILIES },
+          { label: result[18].data.DISTRICT, y: result[18].data.TOTAL_FAMILIES },
+          { label:result[19].data.DISTRICT, y: result[19].data.TOTAL_FAMILIES },
+          { label: result[20].data.DISTRICT, y: result[20].data.TOTAL_FAMILIES },
+          { label: result[21].data.DISTRICT, y: result[21].data.TOTAL_FAMILIES },
+          { label: result[22].data.DISTRICT, y: result[22].data.TOTAL_FAMILIES },
+          { label: result[23].data.DISTRICT, y: result[23].data.TOTAL_FAMILIES },
+          { label: result[24].data.DISTRICT, y: result[24].data.TOTAL_FAMILIES },
+          { label:result[25].data.DISTRICT, y: result[25].data.TOTAL_FAMILIES },
+          { label: result[26].data.DISTRICT, y: result[26].data.TOTAL_FAMILIES },
+          { label: result[27].data.DISTRICT, y: result[27].data.TOTAL_FAMILIES },
+          { label: result[28].data.DISTRICT, y: result[28].data.TOTAL_FAMILIES },
+          { label: result[29].data.DISTRICT, y: result[29].data.TOTAL_FAMILIES },
+          { label: result[30].data.DISTRICT, y: result[30].data.TOTAL_FAMILIES },
+          { label:result[31].data.DISTRICT, y: result[31].data.TOTAL_FAMILIES },
+          { label: result[32].data.DISTRICT, y: result[32].data.TOTAL_FAMILIES },
+          { label: result[33].data.DISTRICT, y: result[33].data.TOTAL_FAMILIES }
+          
         ]
       },
       {
@@ -84,12 +114,40 @@ export class AdminDashboardComponent implements OnInit {
         showInLegend: true,
         color: '#593aa6',
         dataPoints: [
-          { label: "Ajmer", y: 1367080.21 },
-          { label: "Jaipur", y: 1403900.25 },
-          { label: "Kota", y: 1259980.20 },
-          { label: "Bikaner", y: 1585000.77 },
-          { label: "Alwar", y: 1210100.50 },
-          { label: "Hanumangarh", y: 1074500.8 }
+          { label: result[0].data.DISTRICT, y: result[0].data.TOTAL_MEMBERS },
+          { label:result[1].data.DISTRICT, y: result[1].data.TOTAL_MEMBERS },
+          { label: result[2].data.DISTRICT, y: result[2].data.TOTAL_MEMBERS },
+          { label: result[3].data.DISTRICT, y: result[3].data.TOTAL_MEMBERS },
+          { label: result[4].data.DISTRICT, y: result[4].data.TOTAL_MEMBERS },
+          { label: result[5].data.DISTRICT, y: result[5].data.TOTAL_MEMBERS },
+          { label: result[6].data.DISTRICT, y: result[6].data.TOTAL_MEMBERS },
+          { label:result[7].data.DISTRICT, y: result[7].data.TOTAL_MEMBERS },
+          { label: result[8].data.DISTRICT, y: result[8].data.TOTAL_MEMBERS },
+          { label: result[9].data.DISTRICT, y: result[9].data.TOTAL_MEMBERS },
+          { label: result[10].data.DISTRICT, y: result[10].data.TOTAL_MEMBERS },
+          { label: result[11].data.DISTRICT, y: result[11].data.TOTAL_MEMBERS },
+          { label: result[12].data.DISTRICT, y: result[12].data.TOTAL_MEMBERS },
+          { label:result[13].data.DISTRICT, y: result[13].data.TOTAL_MEMBERS },
+          { label: result[14].data.DISTRICT, y: result[14].data.TOTAL_MEMBERS },
+          { label: result[15].data.DISTRICT, y: result[15].data.TOTAL_MEMBERS },
+          { label: result[16].data.DISTRICT, y: result[16].data.TOTAL_MEMBERS },
+          { label: result[17].data.DISTRICT, y: result[17].data.TOTAL_MEMBERS },
+          { label: result[18].data.DISTRICT, y: result[18].data.TOTAL_MEMBERS },
+          { label:result[19].data.DISTRICT, y: result[19].data.TOTAL_MEMBERS },
+          { label: result[20].data.DISTRICT, y: result[20].data.TOTAL_MEMBERS },
+          { label: result[21].data.DISTRICT, y: result[21].data.TOTAL_MEMBERS },
+          { label: result[22].data.DISTRICT, y: result[22].data.TOTAL_MEMBERS },
+          { label: result[23].data.DISTRICT, y: result[23].data.TOTAL_MEMBERS },
+          { label: result[24].data.DISTRICT, y: result[24].data.TOTAL_MEMBERS },
+          { label:result[25].data.DISTRICT, y: result[25].data.TOTAL_MEMBERS },
+          { label: result[26].data.DISTRICT, y: result[26].data.TOTAL_MEMBERS },
+          { label: result[27].data.DISTRICT, y: result[27].data.TOTAL_MEMBERS },
+          { label: result[28].data.DISTRICT, y: result[28].data.TOTAL_MEMBERS },
+          { label: result[29].data.DISTRICT, y: result[29].data.TOTAL_MEMBERS },
+          { label: result[30].data.DISTRICT, y: result[30].data.TOTAL_MEMBERS },
+          { label:result[31].data.DISTRICT, y: result[31].data.TOTAL_MEMBERS },
+          { label: result[32].data.DISTRICT, y: result[32].data.TOTAL_MEMBERS },
+          { label: result[33].data.DISTRICT, y: result[33].data.TOTAL_MEMBERS }
         ]
       }]
     });
@@ -113,9 +171,9 @@ export class AdminDashboardComponent implements OnInit {
         toolTipContent: "<b>{name}</b>: {y}",
         indexLabel: "{name} - #percent%",
         dataPoints: [
-          { y: data.male, name: "Male", color: 'green' },
-          { y: data.female, name: "Female", color: 'pink' },
-          { y: data.TotalGenderCount, name: "Total", color: 'blue' },
+          { y: data.Male, name: "Male", color: 'green' },
+          { y: data.Female, name: "Female", color: 'pink' },
+          // { y: data.TotalGenderCount, name: "Total", color: 'blue' },
        
         ]
       }]
@@ -130,16 +188,7 @@ onClick(e) {
  }
 
 }
-registeredCitizen(){
-  console.log("=================")
-  this.service.getRegisteredCitizen().subscribe(data=>{
-    
-      this.citizen=data
-      this.c1=this.citizen.Count
-      console.log("registerdCitizen",this.c1)
-  })
- 
-}
+
 
 totalTransaction(){
   
@@ -147,8 +196,20 @@ totalTransaction(){
    
       this.transactions=data
       // this.result=this.transactions.result[0]
-      this.t1=this.transactions.Count
+       this.t1=this.transactions.data
       console.log("totalTransaction",this.t1)
+  })
+ 
+}
+
+totalDistrict(){
+  
+  this.service.getDistrictCount().subscribe(data=>{
+   
+      this.district=data
+   
+      console.log("districts",this.district)
+      this.districts(this.district)
   })
  
 }
