@@ -16,6 +16,10 @@ url:string='http://localhost:3000'
   getDistrictCount(){
     return this.http.post(`${this.url}/getDistrictCount`,{})
   }
+  getblockCount(district){
+    return this.http.post(`${this.url}/getBlockCount`,{district:district})
+  }
+
 
   getGender(){
     return this.http.post(`${this.url}/totalGenderCount`,{})

@@ -22,7 +22,7 @@
 
       <div class="row ml_40 mt_20">
         <div class="col-md-11">
-          <div class="ft_18"><b>Family Id</b>:YIKSSS</div>
+          <div class="ft_18"><b>Family Id</b>:YUKSSSS</div>
         </div>
       </div>
       <div class="row ml_40 mt_20">
@@ -36,10 +36,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">Pushpa</th>
-              <td>0</td>
-              <td>12-APR-19</td>
+            <tr *ngFor="let item of fi">
+              <th scope="row">{{item.Name}}</th>
+              <td>{{item.MEM_ID}}</td>
+              <td>{{item.CREATEDDATE}}</td>
 
               <!-- <td><button class="btn ft_color_white btn_padding btn-sm btn-color" (click)="open()" >View</button></td> -->
               <td><button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'"
