@@ -26,7 +26,7 @@ export class AdminDashboardComponent implements OnInit {
      
     this.totalDistrict();
     this.totalTransaction()
-    //  
+    this.genderData() 
     
   }
   
@@ -175,7 +175,7 @@ export class AdminDashboardComponent implements OnInit {
  
  
   gender(data) {
-    console.log("GenderData",data);
+    console.log("GenderDatagraph",data);
     let chart = new CanvasJS.Chart("genderData", {
       theme: "light2",
       
@@ -190,8 +190,8 @@ export class AdminDashboardComponent implements OnInit {
         toolTipContent: "<b>{name}</b>: {y}",
         indexLabel: "{name} - #percent%",
         dataPoints: [
-          { y: data.Male, name: "Male", color: 'green' },
-          { y: data.Female, name: "Female", color: 'pink' },
+          { y: data[0].data.MALE, name: "Male", color: 'green' },
+          { y: data[0].data.FEMALE, name: "Female", color: 'blue' },
           // { y: data.TotalGenderCount, name: "Total", color: 'blue' },
        
         ]

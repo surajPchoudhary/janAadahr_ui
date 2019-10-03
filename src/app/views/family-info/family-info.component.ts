@@ -31,15 +31,8 @@ export class FamilyInfoComponent implements OnInit {
       this.service.getFamilyInfo(this.familyid).subscribe(data=>{
         
         this.fi=data
-       var len=this.fi.length
-      //  console.log(len)
-         for(var i=0;i<len;i++){
-         this.fi1=this.fi
-         console.log("sf",this.fi1)
-
-      
-        console.log("redd",)
-         }
+         console.log("sf",this.fi)
+     
         
 
     
