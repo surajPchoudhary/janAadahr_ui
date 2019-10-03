@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from '../../../assets/js/canvasjs.min';
+import { AdminService } from 'src/app/admin.service';
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-block',
@@ -7,16 +9,18 @@ declare var $: any;
   styleUrls: ['./block.component.scss']
 })
 export class BlockComponent implements OnInit {
-category:any
-  constructor() { }
+district:any
+
+  constructor(public service : AdminService,public routes:ActivatedRoute) { }
 
   ngOnInit() {
-   this.block()
+    this.district =this.routes.snapshot.queryParamMap.get('district')
+  this.getblock()
   }
 
   
 
-block(){
+block(result){
 var chart = new CanvasJS.Chart("chartContainer", {
   animationEnabled: true,
   title: {
@@ -51,12 +55,22 @@ var chart = new CanvasJS.Chart("chartContainer", {
     showInLegend: true,
     dataPoints:
      [
-      { label: "JAWAJA", y: 1266000.21 },
-      { label: "KEKRI", y: 1302890.25 },
-      { label: "KISHANGARH", y: 1157980.20 },
-      { label: "MASUDA", y: 1480000.77 },
-      { label: "PEESANGAN", y: 1010000.50 },
-      { label: "SARWAR", y: 970000.8 }
+     
+      { label: result[0].data.Blocks, y: result[0].data.TOTAL_FAMILIES },
+          { label:result[1].data.Blocks, y: result[1].data.TOTAL_FAMILIES },
+          { label: result[2].data.Blocks, y: result[2].data.TOTAL_FAMILIES },
+          { label: result[3].data.Blocks, y: result[3].data.TOTAL_FAMILIES },
+          { label: result[4].data.Blocks, y: result[4].data.TOTAL_FAMILIES },
+          { label: result[5].data.Blocks, y: result[5].data.TOTAL_FAMILIES },
+          { label: result[6].data.Blocks, y: result[6].data.TOTAL_FAMILIES },
+          { label: result[7].data.Blocks, y: result[7].data.TOTAL_FAMILIES },
+          { label: result[8].data.Blocks, y: result[8].data.TOTAL_FAMILIES },
+          { label: result[9].data.Blocks, y: result[9].data.TOTAL_FAMILIES },
+          { label: result[10].data.Blocks, y: result[10].data.TOTAL_FAMILIES },
+          { label: result[11].data.Blocks, y: result[11].data.TOTAL_FAMILIES },
+          { label: result[12].data.Blocks, y: result[12].data.TOTAL_FAMILIES },
+         
+          
     ]
   },
   {
@@ -68,16 +82,32 @@ var chart = new CanvasJS.Chart("chartContainer", {
     showInLegend: true,
     color: '#a2aba2',
     dataPoints: [
-      { label: "JAWAJA", y: 1367080.21 },
-      { label: "KEKRI", y: 1403900.25 },
-      { label: "KISHANGARH", y: 1259980.20 },
-      { label: "MASUDA", y: 1585000.77 },
-      { label: "PEESANGAN", y: 1210100.50 },
-      { label: "SARWAR", y: 1074500.8 }
+      { label: result[0].data.Blocks, y: result[0].data.TOTAL_MEMBERS },
+          { label:result[1].data.Blocks, y: result[1].data.TOTAL_MEMBERS },
+          { label: result[2].data.Blocks, y: result[2].data.TOTAL_MEMBERS },
+          { label: result[3].data.Blocks, y: result[3].data.TOTAL_MEMBERS },
+          { label: result[4].data.Blocks, y: result[4].data.TOTAL_MEMBERS },
+          { label: result[5].data.Blocks, y: result[5].data.TOTAL_MEMBERS },
+          { label: result[6].data.Blocks, y: result[6].data.TOTAL_MEMBERS },
+          { label:result[7].data.Blocks, y: result[7].data.TOTAL_MEMBERS },
+          { label: result[8].data.Blocks, y: result[8].data.TOTAL_MEMBERS },
+          { label: result[9].data.Blocks, y: result[9].data.TOTAL_MEMBERS },
+          { label: result[10].data.Blocks, y: result[10].data.TOTAL_MEMBERS },
+          { label: result[11].data.Blocks, y: result[11].data.TOTAL_MEMBERS },
+          { label: result[12].data.Blocks, y: result[12].data.TOTAL_MEMBERS },
+         
     ]
   }]
 });
 chart.render();
+}
+
+getblock(){
+this.service.getblockCount(this.district).subscribe(data=>{
+  console.log("Blocks Data",data)
+  this.block(data)
+})
+  
 }
   }
 

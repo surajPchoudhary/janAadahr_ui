@@ -16,10 +16,10 @@
           </p>
           <br>
 
-          <p><strong>Family ID:</strong> YIKSSS</p>
+          <p><strong>Member ID:</strong> {{mem_id}}</p>
 
           ​
-          <p><strong>Name:</strong>Pushpa Devi </p>
+          <p><strong>Name:</strong>{{name}}</p>
           <br>
           
           ​<div class="search-container">
@@ -43,9 +43,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>13140ef1bd4b4424a28372ecc4c41997</td>
-                <td>12-APR-19</td>
+              <tr *ngFor ="let item of t1">
+                <td>{{item.data.TXID}}</td>
+                <td>{{item.data.MODIFIEDDATE}}</td>
 
                 <td><button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'"
                     style="width:auto;">VIEW</button>

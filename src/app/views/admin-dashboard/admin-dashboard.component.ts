@@ -22,11 +22,12 @@ export class AdminDashboardComponent implements OnInit {
   constructor(private route:Router,public service:AdminService) { }
 
   ngOnInit() {
-    // this.gender(data);
+   
      
     this.totalDistrict();
     this.totalTransaction()
-    //  this.genderData()
+    //  
+    
   }
   
   districts(result) {
@@ -34,7 +35,7 @@ export class AdminDashboardComponent implements OnInit {
     var ctx = document.getElementById("districtData");
     var chart = new CanvasJS.Chart(ctx, {
       animationEnabled: true,
-     
+      
       title: {
         text: "Districts"
       },
@@ -61,7 +62,16 @@ export class AdminDashboardComponent implements OnInit {
       },
       data: [{
         type: "column",
-        click: this.onClick,
+        click: function(e) {
+          console.log("result", result)
+          for (var i = 0; i < 34; i++) {
+            if (e.dataPoint.label == result[i].data.DISTRICT) {
+              window.location.href = '/blocks?district=' + e.dataPoint.label
+  
+            }
+          }
+  
+        },
         name: "Number of Families",
         legendText: "Number of Families",
         showInLegend: true,
@@ -107,7 +117,16 @@ export class AdminDashboardComponent implements OnInit {
       },
       {
         type: "column",
-        click: this.onClick,
+        click: function(e) {
+          console.log("result", result)
+          for (var i = 0; i < 34; i++) {
+            if (e.dataPoint.label == result[i].data.DISTRICT) {
+              window.location.href = '/blocks?district=' + e.dataPoint.label
+  
+            }
+          }
+  
+        },
         name: "Number of Members",
         legendText: "Number of Members",
         axisYType: "secondary",
@@ -182,12 +201,15 @@ export class AdminDashboardComponent implements OnInit {
   }
 
 
-onClick(e) {
-  if(e.dataPoint.label=='Ajmer'){
- window.location.href='/blocks'
- }
+// onClick(e,result) {
+//   console.log("result",result)
+//   for(var i=0; i<5 ; i++){
+//   if(e.dataPoint.label==result[i].data.DISTRICT){
+//  window.location.href='/blocks?district='+e.dataPoint.label
 
-}
+//    } }
+
+// }
 
 
 totalTransaction(){
@@ -210,6 +232,7 @@ totalDistrict(){
    
       console.log("districts",this.district)
       this.districts(this.district)
+      
   })
  
 }

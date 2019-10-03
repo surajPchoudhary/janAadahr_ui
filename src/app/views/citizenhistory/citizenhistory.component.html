@@ -18,7 +18,7 @@
           </p>
 
 
-          <p><strong>Family ID:</strong> YIKSSS</p>
+          <p><strong>Family ID:</strong> {{familyid}}</p>
           ​
           <br>
           <br>
@@ -33,11 +33,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Pushpa Devi</th>
-                <td>0</td>
-                <td>12-APR-19</td>
-                <td><button class="btn btn-primary" type="button" (click)="open()">VIEW</button></td>
+              <tr *ngFor="let item of h1">
+                <th scope="row">{{item.data.Name}}</th>
+                <td>{{item.data.MEM_ID}}</td>
+                <td>{{item.data.CREATEDDATE}}</td>
+                <td><button class="btn btn-primary" type="button" (click)="open(item.data.MEM_ID,item.data.Name)">VIEW</button></td>
               </tr>
 
             </tbody>

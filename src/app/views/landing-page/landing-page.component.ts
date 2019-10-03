@@ -27,7 +27,7 @@ export class LandingPageComponent implements OnInit {
 
   open(){
     
-      this.router.navigate(['/citizen-history'],
+      this.router.navigate(['/home'],
         // { queryParams: { "_id": this._id, userName: this.userName } })
     
 

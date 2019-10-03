@@ -22,7 +22,7 @@
 
       <div class="row ml_40 mt_20">
         <div class="col-md-11">
-          <div class="ft_18"><b>Family Id</b>:YIKSSS</div>
+          <div class="ft_18"><b>Family Id:</b>{{familyid}}</div>
         </div>
       </div>
       <div class="row ml_40 mt_20">
@@ -36,13 +36,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">Pushpa</th>
-              <td>0</td>
-              <td>12-APR-19</td>
+
+            
+            <tr *ngFor="let item of fi1">
+              <th scope="row">{{item.data.Name}}</th>
+              <td>{{item.data.MEM_ID}}</td>
+              <td>{{item.data.CREATEDDATE}}</td>
 
               <!-- <td><button class="btn ft_color_white btn_padding btn-sm btn-color" (click)="open()" >View</button></td> -->
-              <td><button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'"
+              <td><button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'" (click)="view(item.data.MEM_ID)"
                   style="width:auto;">VIEW</button>
 
                 <div id="id01" class="modal modal-content animate" style="margin-left: 10%;margin-top:0%">
@@ -51,6 +53,7 @@
 
 
                   <div class="container">
+                    
                     <span onclick="document.getElementById('id01').style.display='none'" class="close"
                       title="Close Modal">&times;</span>
                     <h3><b>FAMILY DETAILS</b></h3>
@@ -58,55 +61,57 @@
 
                     <!-- <form> -->
                     <br />
-                    <fieldset>
+                    <!-- <fieldset > -->
+                      
+                        
                       <!-- <legend>Donation Form</legend> -->
                       <!-- <div class="colums"> -->
-
-
-
+                          
+                          <div *ngIf="gh">
+                              
                       <div class="row">
-
+                         
                         <div class="col-md-4">
                           <label for="fname">HOF Name</label>
-                          <input id="fname" disabled type="text" name="fname" placeholder='Pushpa Devi' />
+                          <input id="fname" disabled type="text" name="fname" value="{{gh.Name}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="lname">Father's Name</label>
-                          <input id="lname" disabled type="text" name="lname" placeholder='Radha Krishn' />
+                          <input id="lname" disabled type="text" name="lname"  value="{{gh.Father_NAME}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="address">Block City</label>
-                          <input id="address" disabled type="text" name="address" placeholder='Dhanoo' />
+                          <input id="address" disabled type="text" name="address" value="{{gh.BLOCK_CITY}}" />
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-4">
                           <label for="phone">Mother's Name</label>
-                          <input id="phone" disabled type="text" name="phone" placeholder='Rukma Devi' />
+                          <input id="phone" disabled type="text" name="phone" value="{{gh.MOTHER_NAME}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="saddress">Aadhar ID</label>
-                          <input id="saddress" disabled type="text" name="city" placeholder='XXXXXX12323' />
+                          <input id="saddress" disabled type="text" name="city" value="{{gh.AADHAR_ID}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="city">District</label>
-                          <input id="city" disabled type="text" name="city" placeholder='Barmer' />
+                          <input id="city" disabled type="text" name="city" value="{{gh.DISTRICT}}" />
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-4">
                           <label for="zip">Bhamashah ID</label>
-                          <input id="zip" disabled type="text" name="zip" placeholder='1207-FQXF-25163' />
+                          <input id="zip" disabled type="text" name="zip" value="{{gh.BHAMASHHAH_ID}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="country">Gender</label>
-                          <input id="country" disabled type="text" name="text" placeholder='Female' />
+                          <input id="country" disabled type="text" name="text" value="{{gh.GENDER}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="country">Pincode</label>
-                          <input id="country" disabled type="text" name="text" placeholder='344702' />
+                          <input id="country" disabled type="text" name="text" value="{{gh.PIN_CODE}}" />
                         </div>
 
                       </div>
@@ -115,15 +120,15 @@
                       <div class="row">
                         <div class="col-md-4">
                           <label for="country">Date of Birth</label>
-                          <input id="country" disabled type="text" name="text" placeholder='05-JUL-74' />
+                          <input id="country" disabled type="text" name="text" value="{{gh.DOB}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="country">Marital Status</label>
-                          <input id="country" disabled type="text" name="text" placeholder='Married' />
+                          <input id="country" disabled type="text" name="text" value="{{gh.MARITAL_STATUS}}" />
                         </div>
                         <div class="col-md-4">
                           <label for="country">Vill Ward</label>
-                          <input id="country" disabled type="text" name="text" placeholder='Shri Ramwala' />
+                          <input id="country" disabled type="text" name="text" value="{{gh.VILL_WARD}}" />
                         </div>
                       </div>
 
@@ -132,14 +137,18 @@
                       <!-- </div> -->
 
 
-                    </fieldset>
+                    <!-- </fieldset> -->
 
                   </div>
+                  
 
                   <!--               
                                     </form> -->
                 </div>
+                </div>
               </td>
+
+
             </tr>
             <!-- <tr>
               <th scope="row">Radha Krishna</th>
@@ -176,6 +185,7 @@
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function (event) {
+    console.log("event=====>",event);
     if (event.target == modal) {
       modal.style.display = "none";
     }

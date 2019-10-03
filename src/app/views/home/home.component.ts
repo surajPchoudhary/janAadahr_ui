@@ -10,32 +10,29 @@ import { UserService } from 'src/app/user.service';
 })
 export class HomeComponent implements OnInit {
 
+  d1:any
+  familyid:any
+  mem_id:any
 
-  familyForm: FormGroup;
+  // familyForm: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder, public service:UserService) { }
 
-  ngOnInit() {
-    this.familyForm = this.formBuilder.group({
-      bhamashaId: ['', Validators.required],
-      familyId: ['', Validators.required],
-      aadharId: ['', Validators.required],
-      district: ['', Validators.required],
-      blockCity: ['', Validators.required],
-      familyHead:['', Validators.required]
-  });
+  ngOnInit() { 
+    this.familyid='YIUSSSS'
+    this.mem_id='0'
+
+    console.log("familyid",this.familyid)
+    console.log("mem_id",this.mem_id)
+
+    this.service.readUserDetails(this.familyid,this.mem_id).subscribe(data=>{
+      this.d1=data
+      console.log('read',this.d1.data.data);
+    })
+
   }
+    
 
-  get f() { return this.familyForm.controls; }
 
-  onSubmit() {
-      this.submitted = true;
 
-      // stop here if form is invalid
-      if (this.familyForm.invalid) {
-          return;
-      }
-
-      alert('SUCCESS!! :-)')
-  }
 }
