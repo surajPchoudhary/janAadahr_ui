@@ -24,7 +24,7 @@
 }
 .tile-stats .count {
     font-size: 38px;
-    font-weight: 700;
+    /* font-weight: 700; */
     line-height: 1.65857;
 }
 .green {
