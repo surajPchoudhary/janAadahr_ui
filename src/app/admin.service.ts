@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-url:string='http://localhost:3000'
+url:string='http://10.68.252.223:3000'
   constructor(public http:HttpClient) { }
 
  

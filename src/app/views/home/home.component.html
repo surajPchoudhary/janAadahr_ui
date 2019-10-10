@@ -40,20 +40,16 @@
                                         <div class="form-group">
                                             <label>Bhamasha Id</label>
                                             <input type="text" class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.bhamashaId.errors }" value="{{d1.data.data.Bhamshah_Id}}" disabled />
-                                            <div *ngIf="submitted && f.bhamashaId.errors" class="invalid-feedback">
-                                                <div *ngIf="f.bhamashaId.errors.required">Bhamasha Id is required</div>
-                                            </div>
+                                                 value="{{d1.data.data.Bhamshah_Id}}" disabled />
+                                           
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Family Id</label>
                                             <input type="text"  class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.familyId.errors }"value="{{d1.data.data.Family_ID}}" disabled />
-                                            <div *ngIf="submitted && f.familyId.errors" class="invalid-feedback">
-                                                <div *ngIf="f.familyId.errors.required">Family Id is required</div>
-                                            </div>
+                                                value="{{d1.data.data.Family_ID}}" disabled />
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +79,7 @@
                                         <div class="form-group">
                                             <label>District</label>
                                             <input type="text"  class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.district.errors }"value="{{d1.data.data.district}}" disabled/>
+                                               value="{{d1.data.data.district}}" disabled/>
                                            
                                         </div>
                                     </div>
@@ -91,7 +87,7 @@
                                         <div class="form-group">
                                             <label>Block City</label>
                                             <input type="text"  class="form-control"
-                                                [ngClass]="{ 'is-invalid': submitted && f.blockCity.errors }" value="{{d1.data.data.block_city}}" disabled />
+                                                 value="{{d1.data.data.block_city}}" disabled />
                                         </div>  
                                        
                                     </div>
