@@ -17,8 +17,8 @@ export class AppComponent {
 
     this.str = window.location.href;
     console.log("url is :",this.str);
-    if( this.str == "http://localhost:4200/"){
-
+    // if( this.str == "http://localhost:4200/"){
+  if( this.str == "http://10.68.252.222:9000/"){
     this.hide_menu = false;
     console.log("hide_menu :",this.hide_menu);
     this.hide_bar = false;
