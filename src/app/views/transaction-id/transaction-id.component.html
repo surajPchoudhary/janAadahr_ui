@@ -1,4 +1,4 @@
-
+<ngx-ui-loader></ngx-ui-loader>
 <div class="row">
 
   <div class="col-md-2 bk_border bk_color pr_0">
@@ -9,6 +9,22 @@
       <div class="container" style="background-color: #e9ecef; height:100%;width:100%">
 
         <div class="jumbotron" style="background-color: #e9ecef; height:100%;width:100%">
+
+          <!-- <div id="showLoadingIndicator" style="margin-left: 39% ;margin-top: 10%"  class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div> -->
+  
           <p>
             <ngb-alert type="custom" style=" color: white;
       background-color: #184069;
@@ -30,7 +46,9 @@
                     
           </div>
 
-          ​
+          <!-- ​<div id="showLoadingIndicator" class="spinner"></div> -->
+
+
           <table class="table table-bordered text-center" id="myTable">
             <thead>
               <tr>
@@ -45,8 +63,8 @@
             <tbody>
               <tr *ngIf='gh1'>
 
-                <td>{{gh1.TXID}}</td>
-                <td>{{gh1.MODIFIEDDATE}}</td>
+                <td>{{obj.data.TXID}}</td>
+                <td>{{obj.data.MODIFIEDDATE}}</td>
 
                 <td><button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'"
                     style="width:auto;" (click)="view(gh1.MEM_ID)">VIEW</button>
@@ -59,7 +77,7 @@
                     <div class="container">
                       <span onclick="document.getElementById('id01').style.display='none'" class="close" 
                         title="Close Modal" style="border-radius: 2%">&times;</span>
-                      <b style="font-size: 180%;">TRANSACTION DETAILS</b>
+                      <b style="font-size: 180%;"> {{name}} transaction details </b>
                       <br><br>
                       <p>Transaction Id: 13140ef1bd4b4424a28372ecc4c41997</p>
                       <!-- <form> -->
@@ -69,51 +87,51 @@
                         <!-- <div class="colums"> -->
 
 
-                          <div *ngIf="gh">
+                          <div *ngIf="obj">
 
                         <div class="row">
 
                           <div class="col-md-4">
                             <label for="fname">HOF Name</label>
-                            <input id="fname" disabled type="text" name="fname" value="{{gh.Name}}" />
+                            <input id="fname" disabled type="text" name="fname" value="{{obj.Hof}}" />
                           </div>
                           <div class="col-md-4">  
                             <label for="lname">Father's Name</label>
-                            <input id="lname" disabled type="text" name="lname" value="{{gh.Father_NAME}}" />
+                            <input id="lname" disabled type="text" name="lname" value="{{obj.data.Father_NAME}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="address">Block City</label>
-                            <input id="address" disabled type="text" name="address" value="{{gh.BLOCK_CITY}}" />
+                            <input id="address" disabled type="text" name="address" value="{{obj.data.BLOCK_CITY}}" />
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-md-4">
                             <label for="phone">Mother's Name</label>
-                            <input id="phone" disabled type="text" name="phone" value="{{gh.MOTHER_NAME}}" />
+                            <input id="phone" disabled type="text" name="phone" value="{{obj.data.MOTHER_NAME}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="saddress">Aadhar ID</label>
-                            <input id="saddress" disabled type="text" name="city" value="{{gh.AADHAR_ID}}" />
+                            <input id="saddress" disabled type="text" name="city" value="{{obj.data.AADHAR_ID}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="city">District</label>
-                            <input id="city" disabled type="text" name="city" value="{{gh.DISTRICT}}" />
+                            <input id="city" disabled type="text" name="city" value="{{obj.data.DISTRICT}}" />
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-md-4">
                             <label for="zip">Bhamashah ID</label>
-                            <input id="zip" disabled type="text" name="zip" value="{{gh.BHAMASHHAH_ID}}" />
+                            <input id="zip" disabled type="text" name="zip" value="{{obj.data.BHAMASHHAH_ID}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="country">Gender</label>
-                            <input id="country" disabled type="text" name="text" value="{{gh.GENDER}}" />
+                            <input id="country" disabled type="text" name="text" value="{{obj.data.GENDER}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="country">Pincode</label>
-                            <input id="country" disabled type="text" name="text" value="{{gh.PIN_CODE}}" />
+                            <input id="country" disabled type="text" name="text" value="{{obj.data.PIN_CODE}}" />
                           </div>
 
                         </div>
@@ -122,15 +140,15 @@
                         <div class="row">
                           <div class="col-md-4">
                             <label for="country">Date of Birth</label>
-                            <input id="country" disabled type="text" name="text" value="{{gh.DOB}}" />
+                            <input id="country" disabled type="text" name="text" value="{{obj.data.DOB}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="country">Marital Status</label>
-                            <input id="country" disabled type="text" name="text" value="{{gh.MARITAL_STATUS}}" />
+                            <input id="country" disabled type="text" name="text" value="{{obj.data.MARITAL_STATUS}}" />
                           </div>
                           <div class="col-md-4">
                             <label for="country">Vill Ward</label>
-                            <input id="country" disabled type="text" name="text" value="{{gh.VILL_WARD}}" />
+                            <input id="country" disabled type="text" name="text" value="{{obj.data.VILL_WARD}}" />
                           </div>
                         </div>
 

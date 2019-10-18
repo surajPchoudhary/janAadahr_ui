@@ -8,7 +8,7 @@ export class UserService {
 
 
 
-  url:string='http://10.68.252.223:3000'
+  url:string='http://localhost:3000'
   constructor(public http:HttpClient) { }
 
  

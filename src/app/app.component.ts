@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component,} from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/user.service';
+import { Event,Router,NavigationStart,NavigationEnd,  } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +14,14 @@ export class AppComponent {
   public str : any ;
   public hide_menu:any;
   public hide_bar:any;
-  constructor(public router:Router ) { }
+  public showLoadingIndicator=true;
+  constructor(public ngxuiservice:NgxUiLoaderService, public router:Router,public route: ActivatedRoute, public service: UserService) { }
 
   ngOnInit() {
 
+    // this.ngxuiservice.start()
+   
+   
     this.str = window.location.href;
     console.log("url is :",this.str);
     // if( this.str == "http://localhost:4200/"){
@@ -27,6 +34,8 @@ export class AppComponent {
       this.hide_bar = true;
       console.log("hide_menu :",this.hide_menu);
     }
+   
+    // this.ngxuiservice.stop()
   }
 
 

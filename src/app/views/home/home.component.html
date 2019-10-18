@@ -1,46 +1,35 @@
+<ngx-ui-loader></ngx-ui-loader>
+
 <div class="row">
     <div class="col-md-2 bk_border bk_color pr_0">
         <app-header></app-header>
     </div>
+      
     <div class="col-md-10 pl_0 pr_0">
+            
         <div class="container-fluid"style="background-color: #e9ecef;height:100%;width:100%">
             <div class="container-fluid" style="background-color: #e9ecef; height:100%;width:100%">
                 <br><br>
-                <!-- <div class="row"> -->
+               
+                        
 
                 <div class="jumbotron-fluid" style="margin-left: 2%">
-
-                    <!-- <div class="col-md-2 bk_border bk_color pr_0">
-        <app-header></app-header>
-    </div> -->
-
-                    <!-- <div class="col-md-10 pl_0 pr_0"> -->
-
-
-
-                    <!-- <div class="row ml_40 mt_40">
-            <div class="col-md-11 side_color">
-                <div class="ft_color_white ft_18 pad_7">HOME</div>
-            </div>
-        </div> -->
-
+    
                     <p>
                         <ngb-alert type="custom" style=" color: white;
                 background-color: #184069;
                 border-color: #000280;" [dismissible]="false"><strong>HOME</strong></ngb-alert>
                     </p>
-                    <!-- main app container -->
-                    <!-- <div class="jumbotron mt_40"> -->
-                    <!-- <div class="container"> -->
+                   
                     <div class="row">
                         <div class="col-md-12">
                             
-                                <div class="row">
+                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Bhamasha Id</label>
+                                                     <label>Bhamasha Id</label>
                                             <input type="text" class="form-control"
-                                                 value="{{d1.data.data.Bhamshah_Id}}" disabled />
+                                                 value="{{setData.Bhamshah_Id}}" disabled />
                                            
                                         </div>
                                     </div>
@@ -48,7 +37,7 @@
                                         <div class="form-group">
                                             <label>Family Id</label>
                                             <input type="text"  class="form-control"
-                                                value="{{d1.data.data.Family_ID}}" disabled />
+                                                value="{{setData.Family_ID}}" disabled />
                                             
                                         </div>
                                     </div>
@@ -59,19 +48,19 @@
 
                                         <div class="form-group">
                                             <label>Aadhar Id</label>
-                                            <input type="text" class="form-control"  value="{{d1.data.data.Aadhar_id}}"disabled />
+                                            <input type="text" class="form-control"  value="{{setData.Aadhar_id}}"disabled />
                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Head Of Family</label>
-                                            <input type="text"  class="form-control" value="{{d1.data.data.hof}}"
+                                            <input type="text"  class="form-control" value="{{setData.hof}}"
                                                  disabled />
                                            
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 
 
                                 <div class="row">
@@ -79,7 +68,7 @@
                                         <div class="form-group">
                                             <label>District</label>
                                             <input type="text"  class="form-control"
-                                               value="{{d1.data.data.district}}" disabled/>
+                                               value="{{setData.district}}" disabled/>
                                            
                                         </div>
                                     </div>
@@ -87,7 +76,7 @@
                                         <div class="form-group">
                                             <label>Block City</label>
                                             <input type="text"  class="form-control"
-                                                 value="{{d1.data.data.block_city}}" disabled />
+                                                 value="{{setData.block_city}}" disabled />
                                         </div>  
                                        
                                     </div>
@@ -98,9 +87,10 @@
                             </div> // -->
                            
 
-                            
+                           
+                        
                                     
-                          
+                            
 
                         </div>
                     </div>

@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{NgxUiLoaderModule} from 'ngx-ui-loader';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,10 +48,13 @@ import { FamilyDetailsComponent } from './views/family-details/family-details.co
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     NgbModule,
-    ReactiveFormsModule,HttpClientModule
+    ReactiveFormsModule,HttpClientModule, NgxUiLoaderModule
   ],
   entryComponents:[NgbdModalContent],
+
   providers: [],
   bootstrap: [AppComponent]
 })
